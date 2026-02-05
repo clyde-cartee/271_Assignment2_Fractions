@@ -39,11 +39,8 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         public Fraction(int n, int d){
             this.numerator = n;
             this.denominator = d;
-
             if (this.denominator < 0){ this.denominator *=-1;  this.numerator*=-1;}
-
             int GCD = this.GCD(this.numerator,this.denominator);
-
             this.numerator = this.numerator/GCD;
             this.denominator = this.denominator/GCD;
         }
@@ -57,9 +54,9 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
             this(0,1);
         }
 
+//toString is already attached to object, override and test cases that need to return string values other than int value
         @Override
         public String toString(){
-
             if (this.denominator == 0){
                 if (this.numerator > 0){
                     return "infinity";
@@ -68,18 +65,15 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
                     return "-infinity";
                 }
             }
-
             if(this.numerator == 0 && this.denominator ==0) return "NaN";
-
             if(this.denominator == 1) return String.valueOf(this.numerator);
-
             return this.numerator + "/" + this.denominator;
         }
+
 // Math Functionality of the program
  //       public Fraction add(){
 
 //        }
-
 
 
 //private variables------------------------------------------
@@ -88,27 +82,18 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         private int numerator;
         private int denominator;
 
+//finds Greatest Common divisable to use for fraction simplication
         private int GCD(int n, int d){
-
             if (n < 0) n = -n;
-
             while (d != 0){
                 int r = n%d;
                 n = d;
                 d = r;
             }
-
             if (n == 0) n = 1;
-
             return n;
-
-
         }
-        
     } 
-
-
-
 
     public static void main(String[] args){
 
