@@ -35,8 +35,6 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 //Fraction class that creates an instance of every fraction
     public static class Fraction{
 
-
-
 //public method for the main to create fraction
         public Fraction(int n, int d){
             this.numerator = n;
@@ -48,28 +46,45 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 
             this.numerator = this.numerator/GCD;
             this.denominator = this.denominator/GCD;
-
-            this.print();
         }
 
 //override if only one number is put in / no input
         public Fraction(int n){
-            this.numerator = n;
-            this.print();
+            this(n,1);
         }
+//default fraction
         public Fraction(){
-            this.print();
+            this(0,1);
         }
+
+        @Override
+        public String toString(){
+
+            if (this.denominator == 0){
+                if (this.numerator > 0){
+                    return "infinity";
+                }
+                else{
+                    return "-infinity";
+                }
+            }
+
+            if(this.denominator == 1) return String.valueOf(this.numerator);
+
+            return this.numerator + "/" + this.denominator;
+        }
+// Math Functionality of the program
+ //       public Fraction add(){
+
+//        }
+
+
+
 //private variables------------------------------------------
         
 //default values for num and den
-        private int numerator = 0;
-        private int denominator = 1;
-
-//print method
-        private void print(){
-            System.out.println(this.numerator + "/" + this.denominator);
-        }
+        private int numerator;
+        private int denominator;
 
         private int GCD(int n, int d){
 
@@ -99,6 +114,11 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         Fraction fr2 = new Fraction(0,8);
         Fraction fr3 = new Fraction(7);
         Fraction fr4 = new Fraction(6,-24);
+
+        System.out.println(fr.toString());
+        System.out.println(fr2.toString());
+        System.out.println(fr3.toString());
+        System.out.println(fr4.toString());
 
     }
 
