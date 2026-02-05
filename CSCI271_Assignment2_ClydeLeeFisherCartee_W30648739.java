@@ -69,6 +69,8 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
                 }
             }
 
+            if(this.numerator == 0 && this.denominator ==0) return "NaN";
+
             if(this.denominator == 1) return String.valueOf(this.numerator);
 
             return this.numerator + "/" + this.denominator;
@@ -111,9 +113,9 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     public static void main(String[] args){
 
         Fraction fr = new Fraction(8,-6);
-        Fraction fr2 = new Fraction(0,8);
+        Fraction fr2 = new Fraction(-1,0);
         Fraction fr3 = new Fraction(7);
-        Fraction fr4 = new Fraction(6,-24);
+        Fraction fr4 = new Fraction(6,0);
 
         System.out.println(fr.toString());
         System.out.println(fr2.toString());
