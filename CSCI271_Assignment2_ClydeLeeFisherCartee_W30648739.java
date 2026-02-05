@@ -32,15 +32,45 @@
 
 public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 
-    static void Fraction(int... fractionInts){
+//Fraction class that creates an instance of every fraction
+    public static class Fraction{
+
+//default values for num and den
+        private int numerator = 0;
+        private int denominator = 1;
+
+//public method for the main to create fraction
+        public Fraction(int n, int d){
+            this.numerator = n;
+            this.denominator = d;
+
+            this.print();
+        }
+
+//override if only one number is put in / no input
+        public Fraction(int n){
+            this.numerator = n;
+            this.print();
+        }
+        public Fraction(){
+            this.print();
+        }
+
+//print method
+        private void print(){
+            System.out.println(this.numerator + "/" + this.denominator);
+        }
+        
+    } 
 
 
 
-    }
 
+    public static void main(String[] args){
 
-    public static void main(String args){
-
+        Fraction fr = new Fraction();
+        Fraction fr2 = new Fraction(17);
+        Fraction fr3 = new Fraction(2,4);
 
     }
 
