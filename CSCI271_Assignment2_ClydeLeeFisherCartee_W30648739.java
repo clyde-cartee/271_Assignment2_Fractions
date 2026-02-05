@@ -35,14 +35,19 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 //Fraction class that creates an instance of every fraction
     public static class Fraction{
 
-//default values for num and den
-        private int numerator = 0;
-        private int denominator = 1;
+
 
 //public method for the main to create fraction
         public Fraction(int n, int d){
             this.numerator = n;
             this.denominator = d;
+
+            if (this.denominator < 0){ this.denominator *=-1;  this.numerator*=-1;}
+
+            int GCD = this.GCD(this.numerator,this.denominator);
+
+            this.numerator = this.numerator/GCD;
+            this.denominator = this.denominator/GCD;
 
             this.print();
         }
@@ -55,10 +60,32 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         public Fraction(){
             this.print();
         }
+//private variables------------------------------------------
+        
+//default values for num and den
+        private int numerator = 0;
+        private int denominator = 1;
 
 //print method
         private void print(){
             System.out.println(this.numerator + "/" + this.denominator);
+        }
+
+        private int GCD(int n, int d){
+
+            if (n < 0) n = -n;
+
+            while (d != 0){
+                int r = n%d;
+                n = d;
+                d = r;
+            }
+
+            if (n == 0) n = 1;
+
+            return n;
+
+
         }
         
     } 
@@ -68,9 +95,10 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 
     public static void main(String[] args){
 
-        Fraction fr = new Fraction();
-        Fraction fr2 = new Fraction(17);
-        Fraction fr3 = new Fraction(2,4);
+        Fraction fr = new Fraction(8,-6);
+        Fraction fr2 = new Fraction(0,8);
+        Fraction fr3 = new Fraction(7);
+        Fraction fr4 = new Fraction(6,-24);
 
     }
 
