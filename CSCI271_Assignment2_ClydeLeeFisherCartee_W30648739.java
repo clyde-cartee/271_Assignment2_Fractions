@@ -127,10 +127,11 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 
 //Fraction Pow calls multiplication over and over for value n
     public Fraction pow(int n){
-
+        //anything to 0 is 1
         if(n == 0){
             return new Fraction(1);
         }
+        //does the absolute value of n if negetive then divides 1 by the found number to make it the reciprical to find the value properly
         else if (n < 0) {
         
         n *= -1;
@@ -144,7 +145,7 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         return toMultiply;
             
         }else{
-
+//if no special cases it finds it normally(I know there is a redundancy in code here that I might fix later)
         Fraction toMultiply = new Fraction(this.getHigh(),this.getLow());
         for(int i = 1;i<n;i++){
             toMultiply = toMultiply.multiply(new Fraction(this.getHigh(),this.getLow()));
@@ -154,7 +155,7 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     }
 
 
-//-----------------------------private variables------------------------------------------
+//-----------------------------private variables------------------------------------------------------//
 
 //individual numerators and denominators for each fraction object created       
         private int numerator;
@@ -190,53 +191,77 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         }
     } 
 
+//------------------------------------main program----------------------------------------------------------//
     public static void main(String[] args){
-
-//Completes the first example problem
+//Completes the first example problem and shows values arent altered through calculation
+        System.out.println("This is the assignment example:");
         Fraction a = new Fraction(16);
         Fraction b = new Fraction(3,5).add(new Fraction(7));
         Fraction c = new Fraction(6,7);
         Fraction results = c.multiply(a.divide(b));
         System.out.println(results);
 
-//goes through each one individually 
+//Shows each of the examples for task 2
         Fraction fr = new Fraction(8,-6);
         Fraction fr2 = new Fraction(23,0);
         Fraction fr3 = new Fraction(-6,0);
         Fraction fr4 = new Fraction(7,1);
         Fraction fr5 = new Fraction(0,0);
+//goes through the methods that are straight forward
         Fraction fr6 = new Fraction(1,2).divide(new Fraction(1,4));
         Fraction fr7 = new Fraction(1,2).multiply(new Fraction(6));
         Fraction fr8 = new Fraction(1,2).add(new Fraction(1,2));
         Fraction fr9 = new Fraction(1,2).subtraction(new Fraction(1,2));
         Fraction fr10 = new Fraction(1,2).negate();
         Fraction fr11 = new Fraction(1,2).pow(4);
+//tests negate against NaN and infinity
         Fraction fr12 = fr3.negate();
         Fraction fr13 = fr5.negate();
+//shows different pow capabilities and odd cases
         Fraction fr14 = new Fraction(1,2).pow(0);
         Fraction fr15 = new Fraction(1,2).pow(-1);
         Fraction fr16 = new Fraction(1,2).pow(-3);
         Fraction fr17 = new Fraction(2).pow(-3);
+//show forgotten task one examples
+        Fraction fr18 = new Fraction(6,-24);
+        Fraction fr19 = new Fraction(0,8);
+//shows I also created a defalt fraction through class chaining
+        Fraction fr20 = new Fraction();
 
 
-
+//all of the outputs for above Fraction objects
+        System.out.println();
+        System.out.println("Task 1 Examples:");
+        System.out.println(fr18.toString());
+        System.out.println(fr19.toString());
+        System.out.println();
+        System.out.println("Task 2 examples:");
         System.out.println(fr.toString());
         System.out.println(fr2.toString());
         System.out.println(fr3.toString());
         System.out.println(fr4.toString());
         System.out.println(fr5.toString());
+        System.out.println();
+        System.out.println("Shows off each one of the methods:");
         System.out.println(fr6.toString());
         System.out.println(fr7.toString());
         System.out.println(fr8.toString());
         System.out.println(fr9.toString());
         System.out.println(fr10.toString());
         System.out.println(fr11.toString());
+        System.out.println();
+        System.out.println("tests NaN and Infinity negates:");
         System.out.println(fr12.toString());
         System.out.println(fr13.toString());
+        System.out.println();
+        System.out.println("Shows odd pow cases");
         System.out.println(fr14.toString());
         System.out.println(fr15.toString());
         System.out.println(fr16.toString());
         System.out.println(fr17.toString());
+        System.out.println();
+        System.out.println("Default fraction to being empty object built:");
+        System.out.println(fr20.toString());
     }
 
     
