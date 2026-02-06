@@ -29,53 +29,32 @@
 * <Clyde Cartee>
 * <W30648739>
 ********************************************************************/
-
 public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
-
 //Fraction class that creates an instance of every fraction
     public static class Fraction{
 
 //public method for the main to create fraction
         public Fraction(int n, int d){
-            this.numerator = n;
-            this.denominator = d;
-            if (this.denominator < 0){ this.denominator *=-1;  this.numerator*=-1;}
-            int GCD = this.GCD(this.numerator,this.denominator);
-            this.numerator = this.numerator/GCD;
-            this.denominator = this.denominator/GCD;
+            if (d < 0){ d *=-1;  n*=-1;}
+            int GCD = GCD(n,d);
+            setHigh(n/GCD);
+            setLow(d/GCD);
         }
 
 //override if only one number is put in / no input
         public Fraction(int n){
             this(n,1);
         }
+
 //default fraction
         public Fraction(){
             this(0,1);
         }
 
-//get and set methods
-        public int getHigh(){
-            return this.numerator;
-
-        }
-        public int getLow(){
-            return this.denominator;
-        }
-
-        public void setHigh(int changeHigh){
-            this.numerator = changeHigh;
-        }
-
-        public void setLow(int changeLow){
-            this.denominator = changeLow;
-        }
-
-        
-
-//toString is already attached to object, override and test cases that need to return string values other than int value
+//toString is already attached to object, override and test cases that need to return string values other than int value uses 
         @Override
         public String toString(){
+            if(getHigh() == 0 && getLow() ==0) return "NaN";
             if (getLow() == 0){
                 if (getHigh() > 0){
                     return "infinity";
@@ -84,29 +63,50 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
                     return "-infinity";
                 }
             }
-            if(getHigh() == 0 && getLow() ==0) return "NaN";
             if(getLow() == 1) return String.valueOf(getHigh());
             return getHigh() + "/" + getLow();
         }
 
 // Math Functionality of the program
 
-//Dividing is just multiplying the fractions while flipping the divisor
- //       public Fraction divide(Fraction Divisor){
+//Dividing is just multiplying the fractions while flipping the divisor so i create a new fraction object and send to multiply to return
+    public Fraction divide(Fraction Divisor){
+        Fraction divFlip = new Fraction (Divisor.getLow(),Divisor.getHigh());
+        return multiply(divFlip);
+   }
+
+//Returns a Fraction object that has been multiplyed and keeps the current fraction from being changed
+    public Fraction multiply(Fraction mult){
+        return new Fraction(
+            this.getHigh() * mult.getHigh(),
+            this.getLow() * mult.getLow()
+        );
+    }
+
+//Adds two fractions together by finding greatest common denominator and returning a new Fraction object
 
 
-
-
-   //     }
-
-    //    public Fraction multiply(Fraction mult)
-
-
-//private variables------------------------------------------
+//-----------------------------private variables------------------------------------------
         
-//default values for num and den
         private int numerator;
         private int denominator;
+
+//get and set methods
+        private int getHigh(){
+            return this.numerator;
+
+        }
+        private int getLow(){
+            return this.denominator;
+        }
+
+        private void setHigh(int changeHigh){
+            this.numerator = changeHigh;
+        }
+
+        private void setLow(int changeLow){
+            this.denominator = changeLow;
+        }
 
 //finds Greatest Common divisable to use for fraction simplication
         private int GCD(int n, int d){
@@ -119,6 +119,10 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
             if (n == 0) n = 1;
             return n;
         }
+
+        private int ComDen(Fraction Frac1, Fraction Frac2){
+
+        }
     } 
 
     public static void main(String[] args){
@@ -126,7 +130,7 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         Fraction fr = new Fraction(8,-6);
         Fraction fr2 = new Fraction(-1,0);
         Fraction fr3 = new Fraction(7);
-        Fraction fr4 = new Fraction(6,0);
+        Fraction fr4 = new Fraction(8,-6).divide(fr);
 
         System.out.println(fr.toString());
         System.out.println(fr2.toString());
