@@ -54,6 +54,25 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
             this(0,1);
         }
 
+//get and set methods
+        public int getHigh(){
+            return this.numerator;
+
+        }
+        public int getLow(){
+            return this.denominator;
+        }
+
+        public void setHigh(int changeHigh){
+            this.numerator = changeHigh;
+        }
+
+        public void setLow(int changeLow){
+            this.denominator = changeLow;
+        }
+
+        
+
 //toString is already attached to object, override and test cases that need to return string values other than int value
         @Override
         public String toString(){
@@ -71,9 +90,16 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         }
 
 // Math Functionality of the program
- //       public Fraction add(){
 
-//        }
+//Dividing is just multiplying the fractions while flipping the divisor
+ //       public Fraction divide(Fraction Divisor){
+
+
+
+
+   //     }
+
+    //    public Fraction multiply(Fraction mult)
 
 
 //private variables------------------------------------------
