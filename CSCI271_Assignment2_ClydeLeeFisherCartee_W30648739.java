@@ -76,17 +76,17 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 //toString is already attached to object, override and test cases that need to return string values other than int value
         @Override
         public String toString(){
-            if (this.denominator == 0){
-                if (this.numerator > 0){
+            if (getLow() == 0){
+                if (getHigh() > 0){
                     return "infinity";
                 }
                 else{
                     return "-infinity";
                 }
             }
-            if(this.numerator == 0 && this.denominator ==0) return "NaN";
-            if(this.denominator == 1) return String.valueOf(this.numerator);
-            return this.numerator + "/" + this.denominator;
+            if(getHigh() == 0 && getLow() ==0) return "NaN";
+            if(getLow() == 1) return String.valueOf(getHigh());
+            return getHigh() + "/" + getLow();
         }
 
 // Math Functionality of the program
