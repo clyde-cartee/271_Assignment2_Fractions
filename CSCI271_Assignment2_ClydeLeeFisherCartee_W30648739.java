@@ -5,7 +5,7 @@
 *
 * - Compiler: javac 25.0.1
 *
-* - Date 1/23/25
+* - Date 2/06/25
 *
 * - Purpose: :This is a program to work with fractions without allowing the use of doubles. 
 *
@@ -101,6 +101,24 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     
     }
 
+//Subtraction is simmilar to addition in process of solving
+    public Fraction subtraction(Fraction subFrac){
+        int num;
+        int den;
+//if same base just subtracts and gives new Fraction object else it multiplies to get common denominators and returns fraction object (this simplifies itself when created)
+        if(this.getLow() == subFrac.getLow()){
+            num = this.getHigh() - subFrac.getHigh();
+            den = this.getLow();
+            return new Fraction(num,den);
+        }
+        else{
+            den = this.getLow() * subFrac.getLow();
+            num = (this.getHigh() * subFrac.getLow()) - (subFrac.getHigh() * this.getLow());
+            return new Fraction(num,den);
+        }
+    
+    }
+
 
 //-----------------------------private variables------------------------------------------
         
@@ -140,8 +158,8 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     public static void main(String[] args){
 
         Fraction fr = new Fraction(8,-6);
-        Fraction fr2 = new Fraction(-1,0);
-        Fraction fr3 = new Fraction(7);
+        Fraction fr2 = new Fraction(-1,2).add(new Fraction(1,2));
+        Fraction fr3 = new Fraction(7).subtraction(new Fraction(8));
         Fraction fr4 = new Fraction(8,-6).divide(fr);
 
         System.out.println(fr.toString());
