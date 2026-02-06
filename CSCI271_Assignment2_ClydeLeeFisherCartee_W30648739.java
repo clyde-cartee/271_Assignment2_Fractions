@@ -105,7 +105,7 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     public Fraction subtraction(Fraction subFrac){
         int num;
         int den;
-        
+
 //if same base just subtracts and gives new Fraction object else it multiplies to get common denominators and returns fraction object (this simplifies itself when created)
         if(this.getLow() == subFrac.getLow()){
             num = this.getHigh() - subFrac.getHigh();
@@ -175,15 +175,31 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 
     public static void main(String[] args){
 
+//Completes the first example problem
+        Fraction a = new Fraction(16);
+        Fraction b = new Fraction(3,5).add(new Fraction(7));
+        Fraction c = new Fraction(6,7);
+        Fraction results = c.multiply(a.divide(b));
+        System.out.println(results);
+
+//goes through each one individually 
         Fraction fr = new Fraction(8,-6);
-        Fraction fr2 = new Fraction(-1,2);
-        Fraction fr3 = new Fraction(7);
-        Fraction fr4 = new Fraction(8,-6);
-        Fraction fr5 = new Fraction(2);
-        Fraction fr6 = new Fraction(8,-6);
-        Fraction fr7 = new Fraction(-1,2);
-        Fraction fr8 = new Fraction(7);
-        Fraction fr9 = new Fraction(8,-6);
+        Fraction fr2 = new Fraction(23,0);
+        Fraction fr3 = new Fraction(-6,0);
+        Fraction fr4 = new Fraction(7,1);
+        Fraction fr5 = new Fraction(0,0);
+        Fraction fr6 = new Fraction(1,2).divide(new Fraction(1,4));
+        Fraction fr7 = new Fraction(1,2).multiply(new Fraction(6));
+        Fraction fr8 = new Fraction(1,2).add(new Fraction(1,2));
+        Fraction fr9 = new Fraction(1,2).subtraction(new Fraction(1,2));
+        Fraction fr10 = new Fraction(1,2).negate();
+        Fraction fr11 = new Fraction(1,2).pow(4);
+        Fraction fr12 = fr3.negate();
+        Fraction fr13 = fr5.negate();
+        Fraction fr14 = new Fraction(1,2).pow(0);
+        Fraction fr15 = new Fraction(1,2).pow(-1);
+
+
 
         System.out.println(fr.toString());
         System.out.println(fr2.toString());
@@ -194,7 +210,12 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         System.out.println(fr7.toString());
         System.out.println(fr8.toString());
         System.out.println(fr9.toString());
-
+        System.out.println(fr10.toString());
+        System.out.println(fr11.toString());
+        System.out.println(fr12.toString());
+        System.out.println(fr13.toString());
+        System.out.println(fr14.toString());
+        System.out.println(fr15.toString());
     }
 
     
