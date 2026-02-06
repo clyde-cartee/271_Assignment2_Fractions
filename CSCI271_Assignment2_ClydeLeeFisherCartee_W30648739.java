@@ -84,6 +84,22 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     }
 
 //Adds two fractions together by finding greatest common denominator and returning a new Fraction object
+    public Fraction add(Fraction addFrac){
+        int num;
+        int den;
+//if same base just adds and gives new Fraction object else it multiplies to get common denominators and returns fraction object (this simplifies itself when created)
+        if(this.getLow() == addFrac.getLow()){
+            num = this.getHigh() + addFrac.getHigh();
+            den = this.getLow();
+            return new Fraction(num,den);
+        }
+        else{
+            den = this.getLow() * addFrac.getLow();
+            num = (this.getHigh() * addFrac.getLow()) + (addFrac.getHigh() * this.getLow());
+            return new Fraction(num,den);
+        }
+    
+    }
 
 
 //-----------------------------private variables------------------------------------------
@@ -118,10 +134,6 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
             }
             if (n == 0) n = 1;
             return n;
-        }
-
-        private int ComDen(Fraction Frac1, Fraction Frac2){
-
         }
     } 
 
