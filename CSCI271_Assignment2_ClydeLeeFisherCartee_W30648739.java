@@ -128,12 +128,29 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
 //Fraction Pow calls multiplication over and over for value n
     public Fraction pow(int n){
 
+        if(n == 0){
+            return new Fraction(1);
+        }
+        else if (n < 0) {
+        
+        n *= -1;
         Fraction toMultiply = new Fraction(this.getHigh(),this.getLow());
 
-        for(int i = 0;i<n;i++){
+        for(int i = 1;i<n;i++){
+            toMultiply = toMultiply.multiply(new Fraction(this.getHigh(),this.getLow()));
+        }
+
+        toMultiply = new Fraction(1,1).divide(toMultiply);
+        return toMultiply;
+            
+        }else{
+
+        Fraction toMultiply = new Fraction(this.getHigh(),this.getLow());
+        for(int i = 1;i<n;i++){
             toMultiply = toMultiply.multiply(new Fraction(this.getHigh(),this.getLow()));
         }
         return toMultiply;
+        }
     }
 
 
@@ -198,6 +215,8 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         Fraction fr13 = fr5.negate();
         Fraction fr14 = new Fraction(1,2).pow(0);
         Fraction fr15 = new Fraction(1,2).pow(-1);
+        Fraction fr16 = new Fraction(1,2).pow(-3);
+        Fraction fr17 = new Fraction(2).pow(-3);
 
 
 
@@ -216,6 +235,8 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
         System.out.println(fr13.toString());
         System.out.println(fr14.toString());
         System.out.println(fr15.toString());
+        System.out.println(fr16.toString());
+        System.out.println(fr17.toString());
     }
 
     
