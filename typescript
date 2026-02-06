@@ -1,0 +1,41 @@
+Script started on 2026-02-06 01:59:44-05:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="120" LINES="30"]
+[?2004h]0;carteec2@thur114-hp1: ~/csci271/271_Assignment2_Fractions[01;32mcarteec2@thur114-hp1[00m:[01;34m~/csci271/271_Assignment2_Fractions[00m$ javac CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739.java  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K 
+[?2004l[?2004h]0;carteec2@thur114-hp1: ~/csci271/271_Assignment2_Fractions[01;32mcarteec2@thur114-hp1[00m:[01;34m~/csci271/271_Assignment2_Fractions[00m$ java CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 
+[?2004lThis is the assignment example:
+240/133
+
+Task 1 Examples:
+-1/4
+0
+
+Task 2 examples:
+-4/3
+infinity
+-infinity
+7
+NaN
+
+Shows off each one of the methods:
+2
+3
+1
+0
+-1/2
+1/16
+
+tests NaN and Infinity negates:
+infinity
+NaN
+
+Shows odd pow cases
+1
+2
+8
+1/8
+
+Default fraction to being empty object built:
+0
+[?2004h]0;carteec2@thur114-hp1: ~/csci271/271_Assignment2_Fractions[01;32mcarteec2@thur114-hp1[00m:[01;34m~/csci271/271_Assignment2_Fractions[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-06 02:00:24-05:00 [COMMAND_EXIT_CODE="0"]
