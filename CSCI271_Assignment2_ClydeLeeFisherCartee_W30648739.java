@@ -105,6 +105,7 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     public Fraction subtraction(Fraction subFrac){
         int num;
         int den;
+        
 //if same base just subtracts and gives new Fraction object else it multiplies to get common denominators and returns fraction object (this simplifies itself when created)
         if(this.getLow() == subFrac.getLow()){
             num = this.getHigh() - subFrac.getHigh();
@@ -119,9 +120,26 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     
     }
 
+//Negate I just multiply current fraction by -1
+    public Fraction negate(){
+        return new Fraction(-1 * this.getHigh(),this.getLow());
+    }
+
+//Fraction Pow calls multiplication over and over for value n
+    public Fraction pow(int n){
+
+        Fraction toMultiply = new Fraction(this.getHigh(),this.getLow());
+
+        for(int i = 0;i<n;i++){
+            toMultiply = toMultiply.multiply(new Fraction(this.getHigh(),this.getLow()));
+        }
+        return toMultiply;
+    }
+
 
 //-----------------------------private variables------------------------------------------
-        
+
+//individual numerators and denominators for each fraction object created       
         private int numerator;
         private int denominator;
 
@@ -158,14 +176,24 @@ public class CSCI271_Assignment2_ClydeLeeFisherCartee_W30648739 {
     public static void main(String[] args){
 
         Fraction fr = new Fraction(8,-6);
-        Fraction fr2 = new Fraction(-1,2).add(new Fraction(1,2));
-        Fraction fr3 = new Fraction(7).subtraction(new Fraction(8));
-        Fraction fr4 = new Fraction(8,-6).divide(fr);
+        Fraction fr2 = new Fraction(-1,2);
+        Fraction fr3 = new Fraction(7);
+        Fraction fr4 = new Fraction(8,-6);
+        Fraction fr5 = new Fraction(2);
+        Fraction fr6 = new Fraction(8,-6);
+        Fraction fr7 = new Fraction(-1,2);
+        Fraction fr8 = new Fraction(7);
+        Fraction fr9 = new Fraction(8,-6);
 
         System.out.println(fr.toString());
         System.out.println(fr2.toString());
         System.out.println(fr3.toString());
         System.out.println(fr4.toString());
+        System.out.println(fr5.toString());
+        System.out.println(fr6.toString());
+        System.out.println(fr7.toString());
+        System.out.println(fr8.toString());
+        System.out.println(fr9.toString());
 
     }
 
